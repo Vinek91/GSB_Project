@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" /> <!-- Définit le jeu de caractères utilisé pour le document -->
+        <title>Menu de navigation</title> <!-- Définit le titre de la page -->
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="padding-left: 1%;"> <!-- Ajoute une barre de navigation responsive en haut de la page -->
+            <div class="navbar-brand" href="#"> <!-- Ajoute un logo et un texte à gauche de la barre de navigation -->
+                <img src="https://lheritierjeremy.files.wordpress.com/2016/04/logo-gsb.png" width="100" height="50" /> <!-- Ajoute le logo de l'entreprise -->
+                Galaxy Swiss Bourdin
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <!-- Ajoute un bouton de basculement pour afficher ou masquer les éléments de navigation sur les appareils mobiles -->
+                <span class="navbar-toggler-icon"></span> <!-- Ajoute une icône pour le bouton de basculement -->
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav"> <!-- Définit la zone qui sera masquée ou affichée par le bouton de basculement -->
+                <ul class="navbar-nav"> <!-- Ajoute une liste non ordonnée pour les éléments de navigation -->
+                    <li class="nav-item"> <!-- Ajoute un élément de navigation -->
+                        <a class="nav-link" routerLink="/">Page de connexion</a> <!-- Ajoute un lien de navigation pour la page de connexion -->
+                    </li>
+                    <li class="nav-item"> <!-- Ajoute un élément de navigation -->
+                        <a class="nav-link" routerLink="/accueil">Acceuil</a> <!-- Ajoute un lien de navigation pour la page d'accueil -->
+                    </li>
+                    <li class="nav-item active"> <!-- Ajoute un élément de navigation actif -->
+                        <a class="nav-link" routerLink="/medecins">Gestion des medecins</a> <!-- Ajoute un lien de navigation pour la page de gestion des médecins -->
+                    </li>
+                    <li class="nav-item"> <!-- Ajoute un élément de navigation -->
+                        <a class="nav-link" href="#" routerLink="/visites">Gestion des visites</a> <!-- Ajoute un lien de navigation pour la page de gestion des visites -->
+                    </li>
+                </ul>
+            </div>
+        </nav> 
+        <!-- Ferme la balise de la barre de navigation -->
+        <!-- La balise <div class="fond"> est utilisée pour ajouter un fond à la section de gestion des médecins */-->
+
+            <div class="fond">
+                <h1>Gestion des médecins</h1>
+            </div>
+            <br />
+            <!-- La balise <section class="fonctionnalites"> est utilisée pour contenir les différentes fonctionnalités disponibles pour la gestion des médecins */ -->
+            
+            <section class="fonctionnalites">
+                <div class="container">
+                    <div class="row">
+                        <!-- La première colonne <div class="col-md-4"> contient la fonctionnalité de recherche de médecins -->
+                        <div class="col-md-4">
+                            <h2>Rechercher un médecin</h2>
+                            <p>Vous pouvez rechercher un médecin en saisissant son nom dans le champ de recherche.</p>
+                        </div>
+                        <!-- La deuxième colonne <div class="col-md-4"> contient la fonctionnalité de mise à jour d'un médecin -->
+                        <div class="col-md-4">
+                            <h2>Mettre à jour un médecin</h2>
+                            <p>Vous pouvez mettre à jour les informations d'un médecin en sélectionnant son nom dans la liste et en modifiant les champs.</p>
+                        </div>
+                        <!-- La troisième colonne <div class="col-md-4"> contient la fonctionnalité de visualisation des données d'un médecin -->
+                        <div class="col-md-4">
+                            <h2>Voir les données d'un médecin</h2>
+                            <p>Vous pouvez voir les données d'un médecin en sélectionnant son nom dans la liste.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Barre de navigation avec des liens pour afficher les derniers rapports et mettre à jour un médecin -->
+            <nav class="navbar navbar-inverse" [hidden]="estCacheMenu" style="background: #3fbbc0;">
+                <ul class="nav navbar-nav" style="display: flex; flex-direction: row; justify-content: center;">
+                    <li><a (click)="derniersRapports()" class="btn btn-light" style="margin-left: 4%;">Derniers rapports</a></li>
+                    <li><a (click)="majMedecin()" class="btn btn-light">MAJ</a></li>
+                </ul>
+            </nav>
+
+            <!-- Section fonctionnalités contenant une barre de recherche pour chercher un médecin et une liste de résultats -->
+            <section class="fonctionnalites row">
+                <div class="col-lg-6">
+                    <!-- Barre de recherche pour chercher un médecin -->
+                    <div class="form-group search-group">
+                        <input type="search" placeholder="Rechercher un médecin" [(ngModel)]="nomMedecin" (keyup)="charger()" />
+                        <button type="button"><i class="fa fa-search"></i></button>
+                    </div>
+
+                    <!-- Liste de résultats affichée si la variable afficherListe est vraie -->
+                    <div class="list-group" *ngIf="afficherListe">
+                        <!-- Boucle d'affichage de la liste des médecins trouvés -->
+                        <div class="list-group-item" *ngFor="let medecin of lesMedecins" (click)="selectionner(medecin)">
+                            <h3>{{medecin.nom}} {{medecin.prenom}}</h3>
+                            <p>Département : {{medecin.departement}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- Formulaire pour mettre à jour les informations d'un médecin sélectionné -->
+                    <form name="frmMedecin" *ngIf="afficherMedecin" (ngSubmit)="valider()" class="majmed">
+                        <div class="form-group">
+                            <label for="adresse">Adresse </label>
+                            <textarea rows="3" cols="30" required="true" [(ngModel)]="medecin.adresse" name="adr" class="form-control"></textarea>
+                            <br />
+                        </div>
+                        <div class="form-group">
+                            <label for="tel">Téléphone</label>
+                            <input type="text" required="true" [(ngModel)]="medecin.tel" name="tel" class="form-control" />
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="specialite">Spécialité {{lblMessage2}}</label>
+                            <input type="text" [(ngModel)]="medecin.specialitecomplementaire" name="spec" class="form-control" />
+                        </div>
+                        <br />
+                        <button type="submit" class="btn btn-success">Valider</button>
+                        <button type="button" class="btn btn-danger" (click)="annuler()">Annuler</button>
+
+                        <!-- Affichage d'un message d'erreur si afficherMessage est vraie -->
+                        <div class="alert alert-danger" *ngIf="afficherMessage">{{lblMessage}}</div>
+                    </form>
+                </div>
+            </section>
+
+                <!-- 
+                La balise <table> permet de créer un tableau HTML.
+                Les classes "table", "table-bordered", "table-striped" et "table-hover"
+                sont définies dans la bibliothèque Bootstrap pour styliser le tableau.
+                L'attribut *ngIf permet d'afficher le tableau uniquement si la variable "afficherRapports" est vraie.
+            -->
+            <table class="table table-bordered table-striped table-hover" *ngIf="afficherRapports">
+                <!-- 
+                    La balise <thead> définit la section d'en-tête d'un tableau.
+                    La classe "thead-light" est définie dans Bootstrap pour styliser l'en-tête.
+                -->
+                <thead class="thead-light">
+                    <!-- 
+                        La balise <tr> définit une ligne de tableau.
+                        Les balises <th> définissent une cellule d'en-tête de tableau.
+                        Les attributs "scope" sont utilisés pour donner une signification aux cellules d'en-tête.
+                    -->
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Motif</th>
+                        <th scope="col">Bilan</th>
+                        <th scope="col">Nom du visiteur</th>
+                    </tr>
+                </thead>
+                <!-- 
+                    La balise <tbody> définit la section corps d'un tableau.
+                    Les balises <tr> définissent les lignes de données du tableau.
+                    L'attribut *ngFor est utilisé pour itérer sur la liste "lesRapports" et afficher chaque élément dans une ligne de tableau.
+                -->
+                <tbody>
+                    <tr *ngFor="let rapport of lesRapports">
+                        <td>{{ rapport.date }}</td>
+                        <td>{{ rapport.motif }}</td>
+                        <td>{{ rapport.bilan }}</td>
+                        <td>{{ rapport.nom }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+    </body>
+</html>

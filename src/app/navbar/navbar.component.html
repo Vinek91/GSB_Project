@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <!-- Définition de la barre de navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="padding-left: 1%;">
+            <!-- Logo de la marque et nom de l'application -->
+            <div class="navbar-brand" href="#"><img src="https://lheritierjeremy.files.wordpress.com/2016/04/logo-gsb.png" width="100" height="50" /> Galaxy Swiss Bourdin</div>
+            <!-- Bouton de basculement pour les petits écrans -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <!-- Liens de navigation -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" routerLink="/">Page de connexion</a></li>
+                    <li class="nav-item active"><a class="nav-link" routerLink="/accueil">Acceuil</a></li>
+                    <li class="nav-item"><a class="nav-link" routerLink="/medecins">Gestion des medecins</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" routerLink="/visites">Gestion des visites</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Définition du carrousel -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+            <!-- Indicateurs -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Section des images du carrousel -->
+            <div class="carousel-inner">
+                <!-- Première image active -->
+                <div class="carousel-item active">
+                    <div class="fond">
+                        <h1>Gestion des rapports de visite</h1>
+                        <p class="lead">
+                            Bienvenue sur notre application de gestion des rapports de visite. Cette application vous permet de gérer facilement les rapports de visite de vos collaborateurs. Vous pouvez facilement ajouter, modifier et
+                            supprimer des rapports de visite à partir de cette application en ligne.
+                        </p>
+                    </div>
+                </div>
+                <!-- Deuxième image -->
+                <div class="carousel-item">
+                    <div class="fond2">
+                        <h1>Gestion des rendez-vous</h1>
+                        <p class="lead2">
+                            Cette application vous permet aussi de gérer facilement les rendez-vous de vos collaborateurs. Vous pouvez facilement ajouter, modifier et supprimer des rendez-vous à partir de cette application en ligne.
+                        </p>
+                    </div>
+                </div>
+                <!-- Troisième image -->
+                <div class="carousel-item">
+                    <div class="fond3">
+                        <h1>Gestion des clients</h1>
+                        <p class="lead3">
+                            Cette application vous permet également de gérer facilement les informations de vos clients. Vous pouvez facilement ajouter, modifier et supprimer des clients à partir de cette application en ligne.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <br />
+            <br />
+            <hr />
+            <br />
+            <br />
+            <!-- Header de la page d'accueil -->
+            <div class="header" style="text-align: center;">
+                <h1>Bienvenue sur notre application</h1> <!-- Titre principal de la page d'accueil -->
+                <h2><i class="fas fa-tasks"></i> Choisissez l'option correspondante :</h2> <!-- Sous-titre qui invite l'utilisateur à choisir une option -->
+            </div>
+            <!-- Section des services proposés -->
+            <section id="featured-services" class="featured-services">
+                <div class="container" data-aos="fade-up">
+                    <div class="row" style="justify-content: space-evenly;">
+                        <!-- Premier service proposé : gestion des médecins -->
+                        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                                <div class="icon"><i class="fas fa-user-md"></i></div> <!-- Icône représentant la gestion des médecins -->
+                                <h4 class="title"><a href="/medecins">Gestion des médecins</a></h4> <!-- Titre du premier service proposé -->
+                                <p class="description">Gérez vos médecins, leurs informations personnelles, leurs horaires et leurs consultations.</p> <!-- Description du premier service proposé -->
+                            </div>
+                        </div>
+                        <!-- Deuxième service proposé : gestion des rapports -->
+                        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                                <div class="icon"><i class="fas fa-stethoscope"></i></div> <!-- Icône représentant la gestion des rapports -->
+                                <h4 class="title"><a href="/visites">Gestion des rapports</a></h4> <!-- Titre du deuxième service proposé -->
+                                <p class="description">Gérer facilement vos rapports et vos informations médicales.</p> <!-- Description du deuxième service proposé -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Fin de la section des services proposés -->
+            <br />
+            <br />
+            <br />
+            <hr />
+            <br />
+            <br />
+            <!-- Section "À propos de nous" -->
+            <section id="about" class="about"> <!-- Section principale à propos de l'entreprise -->
+                <div class="container" data-aos="fade-up"> <!-- Conteneur principal de la section -->
+                    <div class="section-title"> <!-- Titre de la section -->
+                        <h2>À propos</h2> <!-- Titre principal de la section -->
+                        <p> <!-- Paragraphe principal de la section -->
+                            Nous sommes une entreprise offrant plusieurs services de gestion de visites médicales pour les professionnels de la santé. Nous facilitons la gestion des rendez-vous et des horaires des médecins, ainsi que la gestion des dossiers des patients.
+                        </p>
+                    </div>
+                    <div class="row"> <!-- Ligne contenant deux colonnes -->
+                        <div class="col-lg-6" data-aos="fade-right"> <!-- Première colonne -->
+                            <img src="https://c0.wallpaperflare.com/preview/99/0/27/medicine-pills-prescription-healthcare.jpg" class="img-fluid" alt="" /> <!-- Image illustrative -->
+                        </div>
+                        <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left"> <!-- Deuxième colonne -->
+                            <h3>Notre application vous permet de gérer efficacement votre pratique médicale</h3> <!-- Titre de la colonne -->
+                            <p class="fst-italic">Notre application est conçue pour vous aider à organiser votre pratique médicale de manière simple et efficace.</p> <!-- Sous-titre de la colonne -->
+                            <ul> <!-- Liste à puces des fonctionnalités de l'application -->
+                                <li><i class="bi bi-check-circle"></i> Gérez facilement les horaires de vos médecins.</li>
+                                <li><i class="bi bi-check-circle"></i> Suivez les rendez-vous des patients et assurez un suivi de qualité.</li>
+                                <li><i class="bi bi-check-circle"></i> Accédez aux dossiers des patients en toute sécurité et confidentialité.</li>
+                            </ul>
+                            <p> <!-- Paragraphe principal de la colonne -->
+                                Notre application est la solution idéale pour les cliniques et les cabinets médicaux de toutes tailles. Elle vous permettra de gérer efficacement votre pratique médicale tout en améliorant la qualité de vos soins et la satisfaction de vos patients.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End About Us Section -->
+            <!-- ======= Counts Section ======= -->
+            <section id="counts" class="counts">
+                <div data-aos="fade-up" class="container">
+                    <div class="row no-gutters">
+                        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+                            <div class="count-box">
+                                <i class="fas fa-user-md"></i> <span data-purecounter-start="0" data-purecounter-end="1005" data-purecounter-duration="1" class="purecounter">1005</span>
+                                <p><strong>Plus de 1005 médecins</strong> disponibles dans nos cliniques pour prendre soin de vous</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+                            <div class="count-box">
+                                <i class="far fa-hospital"></i> <span data-purecounter-start="0" data-purecounter-end="7" data-purecounter-duration="1" class="purecounter">7</span>
+                                <p><strong>Services dans plus de 7 départements</strong> pour vous offrir une proximité géographique optimale</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+                            <div class="count-box">
+                                <i class="fas fa-pills"></i> <span data-purecounter-start="0" data-purecounter-end="28" data-purecounter-duration="1" class="purecounter">28</span>
+                                <p><strong>Plus de 28 variétés de médicaments</strong> disponibles dans notre laboratoire de recherche pour répondre à vos besoins spécifiques</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ======= Footer ======= -->
+            <footer id="footer">
+                <div class="container">
+                    <div class="copyright">
+                        &copy; Copyright <strong><span>Galaxy Swiss Bourdin</span></strong>. All Rights Reserved
+                    </div>
+                    <div class="credits">Designed by <a href="#" class="user">Kévin</a></div>
+                </div>
+            </footer>
+            <!-- End Footer -->
+        </body>
+    </html>

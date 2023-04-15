@@ -1,0 +1,419 @@
+body {
+
+	width: auto;
+	height: 98vh;
+	background-color: white;
+	overflow-x: hidden;
+}
+
+.fond {
+	background-image: url(https://imchospital.com.pk/storage/assets/images/indexpage/1630144516slider-image-change.jpg);
+	width: 100%;
+	height: 50%;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative; //ajouter cette propriété pour que le z-index fonctionne/
+	z-index: 0;
+}
+
+.fond::before {
+	//ajouter une pseudo-élément before pour ajouter un fond semi-transparent/
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0 0 0 / 12%);
+	z-index: -2;
+}
+
+h1 {
+	font-family: Raleway;
+	font-size: 3.5em;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	font-family: Josefin Sans Flex, Josefin-Sans-Flex-Fallback, sans-serif;
+	letter-spacing: 0.0625em;
+	background-color: rgba(63, 187, 192, 0.8196078431);
+	color: white;
+	padding: 10px;
+	border-radius: 5px;
+
+}
+
+/* styles pour la barre de navigation */
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+}
+
+nav li {
+	margin-right: 20px;
+}
+
+nav a {
+
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 10px 20px;
+	border-radius: 5px;
+	transition: all 0.2s ease-in-out;
+}
+
+
+.navbar .nav-link,
+.navbar-dark .nav-link {
+
+	color: #626262;
+}
+
+.navbar .nav-link:hover,
+.navbar-dark .nav-link:hover {
+	background-color: #3fbbc0;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+
+
+	background-color: transparent;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 12px;
+	background-color: #3fbbc0;
+}
+
+.navbar-nav .active>.nav-link {
+	color: #3fbbc0;
+}
+
+.navbar-nav .active>.nav-link:hover {
+	color: rgb(255, 255, 255);
+}
+
+.bg-light {
+	background-color: #f8f9fa !important;
+	box-shadow: 0px 2px 15px rgb(0 0 0 / 10%);
+}
+
+/* styles pour la liste des médecins */
+.list-group {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px;
+	overflow-y: auto;
+	max-height: 41vh;
+	margin-top: 10px;
+
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.col-lg-6 {
+	flex: 1;
+	padding: 10px;
+}
+
+.list-group-item {
+	border: 1px solid #3fbbc0;
+	border-radius: 5px;
+	margin: 10px;
+	padding: 10px;
+}
+
+.list-group-item+.list-group-item {
+	border-top-width: 1px;
+}
+
+.list-group ul {
+	list-style: none;
+	padding: 0;
+}
+
+.list-group li {
+	background-color: #f8f9fa;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	padding: 10px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+.list-group li:hover {
+	background-color: #ddd;
+}
+
+.list-group li:last-child {
+	border-bottom: none;
+}
+
+.search-group {
+	display: flex;
+	align-items: center;
+	/* background-color: #fff; */
+	/* border: 1px solid #e6e6e6; */
+	/* border-radius: 50px; */
+	/* box-shadow: 0 2px 5px rgb(0 0 0 / 10%); */
+	padding: 0.5rem 1rem;
+}
+
+.search-group input[type="search"] {
+	border: none;
+	flex: 1;
+	margin-right: 1rem;
+	outline: none;
+}
+
+.search-group button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	outline: none;
+}
+
+/* styles pour le formulaire de recherche */
+.form-group.search-group {
+	position: relative;
+}
+
+.form-group.search-group input[type="search"] {
+	width: 100%;
+	border: none;
+	border-bottom: 2px solid #3fbbc0;
+	padding: 5px 10px;
+	font-size: 16px;
+	outline: none;
+}
+
+.form-group.search-group button {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translateY(-50%);
+	border: none;
+	background-color: transparent;
+	outline: none;
+	cursor: pointer;
+}
+
+.form-group.search-group button i {
+	color: #3fbbc0;
+	font-size: 20px;
+}
+
+.btn:not(:disabled):not(.disabled) {
+	cursor: pointer;
+	margin: 10px;
+}
+
+/* styles pour la section fonctionnalités */
+.fonctionnalites {
+	background-color: #f8f9fa;
+	padding: 50px 0;
+}
+
+.fonctionnalites h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	font-family: Raleway;
+}
+
+.fonctionnalites p {
+	font-size: 16px;
+	line-height: 1.5;
+	margin-bottom: 20px;
+	font-family: Raleway;
+}
+
+.fonctionnalites .container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.fonctionnalites .col-md-4 {
+	flex: 1;
+	padding: 0 15px;
+	text-align: center;
+	font-family: Raleway;
+}
+
+.fonctionnalites .col-md-4 h2 {
+	color: #3fbbc0;
+	font-family: Raleway;
+}
+
+.medicament {
+	float: right;
+	margin-right: 20px;
+	/* ou un autre nombre selon votre mise en page */
+}
+
+.aa {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	margin: auto;
+}
+
+.aa>div {
+	width: 150%;
+
+}
+
+.col-lg-6 {
+	margin: auto;
+}
+
+
+.formulaire {
+	border: 1px solid #3fbbc0;
+	padding: 20px;
+	margin-top: 20px;
+	box-shadow: 0 0 10px #3fbbc0;
+	font-family: Raleway;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+textarea,
+input[type="date"],
+select {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	font-size: 16px;
+	margin-top: 5px;
+}
+
+button[type="submit"],
+button[type="button"] {
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	margin-top: 5px;
+	font-family: Raleway;
+}
+
+.medicaments {
+	background-color: #ffffff;
+	border: 1px solid #3fbbc0;
+	border-radius: 4px;
+	margin-top: 20px;
+	padding: 20px;
+	box-shadow: 0 0 10px #3fbbc0;
+	width: 100%;
+}
+
+.medicaments h2 {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.medicaments table {
+	width: 100%;
+}
+
+.medicaments table td {
+	vertical-align: middle;
+}
+
+.medicaments .form-group {
+	margin-bottom: 10px;
+}
+
+.medicaments .list-group {
+	max-height: 19vh;
+	margin-top: -35px;
+	gap: 5px;
+	overflow-x: hidden;
+}
+
+.medicaments .list-group-item {
+	background-color: #fff;
+	border: 1px solid #3fbbc0;
+	border-radius: 4px;
+	cursor: pointer;
+	padding: 10px;
+	transition: background-color 0.2s ease;
+}
+
+.medicaments .list-group-item:hover {
+	background-color: #f0f0f0;
+}
+
+.medicaments ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.medicaments ul li {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+
+/* styles pour la section fonctionnalités */
+.fonctionnalites {
+	background-color: #f8f9fa;
+	padding: 50px 0;
+}
+
+.fonctionnalites h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+.fonctionnalites p {
+	font-size: 16px;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+
+.fonctionnalites .container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.fonctionnalites .col-md-4 {
+	flex: 1;
+	padding: 0 15px;
+	text-align: center;
+}
+
+.fonctionnalites .col-md-4 h2 {
+	color: #3fbbc0;
+}

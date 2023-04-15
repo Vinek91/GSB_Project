@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head> </head>
+    <body>
+        <div class="all">
+            <div class="sectionimage"></div> <!-- Section d'image -->
+            <div class="sectionlogin">
+                <br />
+                <h1>Gestion des rapports de visite</h1> 
+                <br />
+                <h2>Connexion</h2> <!-- Titre de la section de connexion -->
+                <h3>Bienvenue :{{ login }}</h3> <!-- Message de bienvenue personnalisé -->
+                <div class="form_container"> <!-- Formulaire de connexion -->
+                    <form> 
+                        <div class="groupe">
+                            <label for="login">Login :</label> <!-- Label pour le champ de saisie du login -->
+                            <br />
+                            <br />
+                            <input class="input" type="text" name="login" id="login" [(ngModel)]="login" placeholder=" Saisir votre login" autofocus /> <!-- Champ de saisie du login avec une aide visuelle -->
+                            <br />
+                            <br />
+                            <div class="group">
+                                <label for="password">Password : </label> <!-- Label pour le champ de saisie du mot de passe -->
+                                <br />
+                                <br />
+                                <input class="input" type="password" name="mdp" id="mdp" [(ngModel)]="mdp" placeholder=" Saisir votre mot de passe" /> <!-- Champ de saisie du mot de passe avec une aide visuelle -->
+                            </div>
+                        </div>
+                        <div class="alert" [hidden]="estCache">{{lblMessage}}</div> <!-- Zone d'affichage des messages d'erreur ou de confirmation -->
+                        <br />
+                        <div class="alert">
+                            <form class="group" name="frmLogin" (ngSubmit)="valider()">
+                                <button class="button" type="submit">Se connecter</button> <!-- Bouton de soumission du formulaire de connexion -->
+                            </form>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <p></p>
+    </body>
+</html>
