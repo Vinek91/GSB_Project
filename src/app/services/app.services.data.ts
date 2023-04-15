@@ -83,10 +83,16 @@ export class DataService {
   *Fonction permettant de mettre à jour un rapport.
   *Elle prend en paramètre l'ID du rapport, le motif et le bilan.
   */
-  public majRapport(idRapport: string, motif: string, bilan: string) {
-    let url: string = this.urlAPI + "/majrapport?idRapport=" + idRapport + "&motif=";
-    url += motif + "&bilan=" + bilan;
-    let req = this.http.get(url);
+  public majRapport(idRapportmed: string, motifmed: string, bilanmed: string) {
+
+
+    const body = {
+      idRapport:idRapportmed,
+      motif:motifmed,
+      bilan:bilanmed
+    }
+    let url: string = this.urlAPI + "/majRapports";
+    let req = this.http.put(url,body);
     return req;
   }
 
